@@ -1,8 +1,8 @@
 pipeline {
-    agent any   // runs on any available node/slave
+    agent {label 'slave'}   // runs on any available node/slave
 
     stages {
-        stage('Stage 1') {
+        stage('checkout') {
             steps {
                 echo 'Hello from Stage 1!'
                 sh 'echo Running build step on slave/agent...'
